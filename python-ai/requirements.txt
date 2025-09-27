@@ -1,0 +1,16 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.6.0
+
+orjson>=3.9.15
+loguru>=0.7.2
+
+websockets>=12.0
+# nats-py>=2.7.2
+# aiokafka>=0.10.0
+
+# На потом (когда подключишь позу/модели) — закомментировано, чтобы сейчас всё ставилось быстро:
+# numpy>=1.26.0
+# opencv-python-headless>=4.9.0.80
+# mediapipe>=0.10.14
+# onnxruntime>=1.18.0
