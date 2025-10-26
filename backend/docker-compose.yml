@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16.4
+    container_name: ai_gym_pro_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ai_gym_pro
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata_aigym:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d ai_gym_pro"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  pgdata_aigym:
