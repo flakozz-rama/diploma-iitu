@@ -3,15 +3,28 @@ spring:
     url: jdbc:postgresql://localhost:5433/ai_gym_pro
     username: postgres
     password: postgres
+    driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: validate
+      ddl-auto: none
     properties:
       hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false
 
   flyway:
     enabled: true
     url: jdbc:postgresql://localhost:5433/ai_gym_pro
     user: postgres
     password: postgres
+    baseline-on-migrate: true
+
+app:
+  jwt:
+    secret: "YWJlNnlWd5bS1wcm8tMTIzNDU2Nzg5MC1zZWNyZXQta2V5LXNwcmluZw=="
+    access-ttl-minutes: 60
+    refreshTtl: 43200
+
+server:
+  port: 8080

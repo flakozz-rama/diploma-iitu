@@ -1,4 +1,6 @@
 import org.gradle.jvm.toolchain.JavaLanguageVersion
+import org.gradle.kotlin.dsl.implementation
+import org.gradle.kotlin.dsl.runtimeOnly
 
 plugins {
     id("org.springframework.boot") version "3.3.4"
@@ -47,6 +49,12 @@ dependencies {
 
     // Tests
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+
+    implementation("io.jsonwebtoken:jjwt-api:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-impl:0.11.5")
+    runtimeOnly("io.jsonwebtoken:jjwt-jackson:0.11.5")
+
 }
 
 tasks.test {
